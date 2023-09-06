@@ -13,7 +13,7 @@ jobs:
         uses: cpina/github-action-push-to-another-repository@v1.7.2
         env:
           # SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
-          API_TOKEN_GITHUB: ${{ secrets.SITES_PAT }}
+          API_TOKEN_GITHUB: ${{ secrets.SITE_PAT }}
         with:
           source-directory: 'proj1'
           destination-github-username: 'jascodes-sites'
