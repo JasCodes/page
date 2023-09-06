@@ -9,15 +9,26 @@ jobs:
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
-
-      # - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
-      #   run: |
-      #     npm ci
-      #     npm run build
-
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Pushes to another repository
+        uses: vinayb21/github-action-push-to-another-repo@master
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.SITES_PAT }}
         with:
-          folder: ./proj1 # The folder the action should deploy.
-          token: ${{ secrets.SITES_PAT }}
-          repository-name: jascodes-sites/test-site
+          source-directory: 'proj1'
+          destination-github-username: 'jascodes-sites'
+          destination-repository-name: 'test-site'
+          user-email: bot@jas.bio
+
+    #   # - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
+    #   #   run: |
+    #   #     npm ci
+    #   #     npm run build
+
+    #   - name: Deploy 🚀
+    #     uses: JamesIves/github-pages-deploy-action@v4
+    #     with:
+    #       folder: ./proj1 # The folder the action should deploy.
+    #       token: ${{ secrets.SITES_PAT }}
+    #       repository-name: jascodes-sites/test-site
+
+
