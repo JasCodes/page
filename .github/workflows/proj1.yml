@@ -19,5 +19,5 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: ./proj1 # The folder the action should deploy.
-          token: ${{ secrets.SITES_PAT }}
+          # token: ${{ secrets.SITES_PAT }}
           repository: jascodes-sites/test-site
