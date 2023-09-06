@@ -20,4 +20,4 @@ jobs:
         with:
           folder: ./proj1 # The folder the action should deploy.
           # token: ${{ secrets.SITES_PAT }}
-          repository: jascodes-sites/test-site
+          repository-name: jascodes-sites/test-site
